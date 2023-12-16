@@ -76,7 +76,7 @@ const RSVPForm = () => {
     <h1 className="form-title">RSVP for {details.eventName}</h1>
       <p className="form-subtitle">{details.eventDescription}</p>
 
-      <h2>Event Details</h2>
+      {/* <h2>Event Details</h2> */}
       <div className="event-info">
         <strong>Date:</strong> {details.date}<br/>
         <strong>Time:</strong> {details.time}<br/>
@@ -123,10 +123,10 @@ const RSVPForm = () => {
       </div>
 
       {/* Submit Button */}
-      <button type="submit">Submit RSVP</button>
+      <button className='submit-button' type="submit">Submit RSVP</button>
 
       {/* Calendar Buttons Container */}
-      <div id="calendar-buttons" style={{ display: 'none', marginTop: '10px' }}>
+      <div id="calendar-buttons" style={{ display: 'none', marginTop: 'px' }}>
       <a id="icalendar-link" href="#" download="event.ics" style={buttonStyle}>Add to iCalendar</a>
       <a id="googlecalendar-link" href="#" target="_blank" rel="noopener noreferrer" style={buttonStyle}>Add to Google Calendar</a>
     </div>

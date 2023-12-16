@@ -4,13 +4,13 @@ import EventDetails from './Components/EventDetails.js';
 import RSVPForm from './Components/RSVPForm.jsx';
 import HostLoginForm from './Components/HostLoginForm.jsx';
 import EventCreated from './Components/EventCreated.jsx';
-import './App.css'; // Assuming you have an App.css for your styles
+import './App.css';
 
 function App() {
     return (
         <div className="App">
             {/* {<EventForm/>} */}
-            {<EventDetails/>}
+            {/* {<EventDetails/>} */}
             {<RSVPForm/>}
             {/* {<HostLoginForm/>} */}
             {/* <EventCreated/> */}

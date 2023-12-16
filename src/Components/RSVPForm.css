@@ -1,6 +1,38 @@
+.form-title{
+    margin-bottom: 5px;
+    margin-top: 1px;
+}
+
+.form-subtitle{
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+.submit-button{
+    margin-top: 5px;
+}
+
+#calendar-buttons {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+}
+
+#icalendar-link,
+#googlecalendar-link {
+    width: 170px; /* Set a fixed width for the buttons */
+    text-align: center; /* Center the text within the buttons */
+    padding: 10px; /* Add padding to the buttons for better appearance */
+    margin: 5px; /* Add margin to create space between the buttons */
+    height: 23;
+    font-size: .8em;
+}
+
+
+
 .event-info {
     background-color: #F4F4F4;
     padding: 15px;
+    padding-bottom: 0px;
     margin-bottom: 20px;
     border-radius: 5px;
 }
@@ -8,4 +40,9 @@
 .event-info strong {
     color: #333333;
     margin-right: 5px;
+}
+
+.rsvp-list{
+    max-height: 150px;
+    overflow: scroll;
 }
