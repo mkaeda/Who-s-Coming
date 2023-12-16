@@ -1,0 +1,78 @@
+/* page.css */
+
+/* Default styles for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.6rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    /* Add default padding */
+    box-sizing: border-box;
+    /* Include padding in the element's total width and height */
+}
+
+/* Header titles (h1) styles */
+h1 {
+    font-size: 2.25em;
+}
+
+/* Subtitle/description with class "page-description" styles */
+.page-description {
+    color: #818181;
+}
+
+.horizontal-line {
+    /* width: 70%; */
+    margin: 20px auto;
+    /* background-color: #F4F4F4;
+    color:#F4F4F4; */
+    border-color:#F4F4F4;
+    display: block;
+}
+
+button {
+    display: inline-block;
+    width: 100%;
+    padding: 25px;
+    /* Updated to em */
+    font-size: 1.5em;
+    /* Updated to em */
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #005cb0;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.grid-box {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 25px;
+}
+
+.grid-box p {
+    color: #818181;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.anchor {
+    text-decoration: underline;
+    color: #005cb0;
+    float: right;
+    display: block;
+}
+
+.bold {
+    font-weight: bold;
+}
