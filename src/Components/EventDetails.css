@@ -1,0 +1,128 @@
+/* EventDetails.css */
+.event-details-container {
+    background-color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    color: #333333;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px auto;
+    padding: 15px;
+    max-width: 400px;
+  }
+
+  .event-details-container h1 {
+    color: #4A90E2;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  .event-details-container p {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .event-details-container .event-info {
+    background-color: #F4F4F4;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+
+  .event-details-container .event-info strong {
+    color: #333333;
+    margin-right: 5px;
+  }
+
+  .event-details-container .rsvp-breakdown {
+    margin-bottom: 20px;
+  }
+
+  .event-details-container .rsvp-breakdown h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .event-details-container .rsvp-breakdown h3 {
+    font-size: 16px;
+    margin-top: 16px;
+    margin-bottom: 4px;
+  }
+
+  .event-details-container .rsvp-breakdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .rsvp-breakdown {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+  .rsvp-list {
+    border-radius: 5px;
+    padding: 15px;
+    width: 48%;
+  }
+
+  .rsvp-list h3 {
+    font-size: 16px;
+    margin: 0 !important;
+    margin-bottom: 15px !important;
+    text-align: center;
+  }
+
+  .rsvp-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .rsvp-list ul li {
+    /* padding: 8px 15px; */
+    margin-bottom: 6px;
+    padding: 0 !important;
+    /* border-radius: 4px; */
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Specific styles for 'Yes' and 'No' RSVP lists */
+  .rsvp-yes {
+    background-color: #D4EDDA; /* Light green background for yes */
+    border: 1px solid #C3E6CB; /* Slightly darker green border */
+  }
+
+  .rsvp-yes ul li {
+    background-color: #D4EDDA !important;
+      /* Light green background for yes */
+  }
+
+  .rsvp-no {
+    background-color: #F8D7DA; /* Light red background for no */
+    border: 1px solid #F5C6CB; /* Slightly darker red border */
+  }
+
+  .rsvp-no ul li {
+    background-color: #F8D7DA !important;
+  }
+
+  /* Add additional styles if necessary */
+
+    .horizontal-line {
+      /* width: 70%; */
+      margin: 20px auto;
+      /* background-color: #F4F4F4;
+      color:#F4F4F4; */
+      border-color: #F4F4F4;
+      display: block;
+    }
+
+    .edit-link {
+      display: block;
+      float: right;
+    }

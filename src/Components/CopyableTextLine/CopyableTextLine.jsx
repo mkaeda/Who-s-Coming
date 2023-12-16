@@ -6,16 +6,10 @@ import './CopyableTextLine.css'
 const CopyableTextLine = ({ text }) => {
   const textRef = useRef(null);
 
-  const handleCopyClick = () => {
-    if (textRef.current) {
-      // Create a range, select the text, and copy it
-      const range = document.createRange();
-      range.selectNode(textRef.current);
-      window.getSelection().addRange(range);
-      document.execCommand('copy');
-      // Clear the selection
-      window.getSelection().removeAllRanges();
-    }
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(text)
+      .then(() => alert('Link copied to clipboard!'))
+      .catch(err => console.error('Error copying link: ', err));
   };
 
   return (
@@ -24,7 +18,7 @@ const CopyableTextLine = ({ text }) => {
       <span ref={textRef} className='text'>{text}</span>
 
       {/* Copy button */}
-      <button className='copy-btn' onClick={handleCopyClick}><FontAwesomeIcon icon={faCopy} /></button>
+      <button className='copy-btn' onClick={handleCopyLink}><FontAwesomeIcon icon={faCopy} /></button>
     </div>
   );
 };

@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# 📅 Who's Coming?: Simplified Event Planning
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Effortlessly plan and manage your events with "Who's Coming?", a project developed by students of the University of Calgary CPSC 581 - Human Computer Interactions II Course Assignment.
 
-## Available Scripts
+## 📜 Table of Contents
 
-In the project directory, you can run:
+1. [🌐 Overview](#overview)
+2. [🔑 Key Features](#key-features)
+3. [🧐 How to Use](#how-to-use)
+4. [🛠 Tech Stack](#tech-stack)
+5. [✍️ Authors](#authors)
 
-### `npm start`
+<a name="overview"></a>
+## 🌐 Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+"Who's Coming?" revolutionizes the way you organize gatherings and events. Designed with a user-friendly interface, it eases the process of planning and managing events, enabling both in-person and remote communication and collaboration.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Who's Coming? Demo](#) <!-- Replace # with the link to your app's screenshot/demo -->
 
-### `npm test`
+<a name="key-features"></a>
+## 🔑 Key Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Event Creation and Management:** Create events effortlessly and manage them with a simple interface.
+2. **Unique URL Generation:** Every event gets a unique URL for easy sharing.
+3. **RSVP Tracking:** Track who's coming and who's not with a straightforward RSVP system.
+4. **Calendar Integration:** Automatically adds events to Google Calendar and iCalendar.
+5. **Live Updates:** View live updates of RSVP responses on the event details page.
 
-### `npm run build`
+<a name="how-to-use"></a>
+## 🧐 How to Use
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Launch the Who's Coming? App 
+2. Create an event and fill in the details.
+3. Share the unique event URL with your guests.
+4. Track RSVPs and manage event details on the dashboard.
+5. Guests can add the event to their calendars using the iCalendar and Google Calendar options.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<a name="tech-stack"></a>
+## 🛠 Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The tech stack powering "Who's Coming?" includes:
+- React for building the user interface.
+- JavaScript, HTML, and CSS for frontend development.
+- LocalStorage for state management.
 
-### `npm run eject`
+Plan your next gathering with ease using "Who's Coming?"!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<a name="authors"></a>
+## ✍️ Authors
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The creators of "Who's Coming?" are:
+- [Emir Avci](https://github.com/selcukemiravci)
+- [Monica Nguyen](https://github.com/Monica-Nguyen)
+- [Makeda Morris](https://github.com/mkaeda)
+- [Jason Osmond](https://github.com/TheJasonOsmond)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
