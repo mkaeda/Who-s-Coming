@@ -1,7 +1,7 @@
 /* Form.css */
 .form-container {
     background: #fff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
@@ -33,16 +33,19 @@
 .form-field input[type="email"],
 .form-field input[type="date"],
 .form-field input[type="time"],
+.form-field input[type="number"],
+.form-field input[type="password"],
 .form-field select {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: none;
+    background-color: #f4f4f4;
+    border-radius: 5px;
 }
 
 .form-field input[type="submit"] {
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     border: none;
     border-radius: 4px;
     background-color: #007bff;
@@ -50,10 +53,11 @@
     font-size: 16px;
     cursor: pointer;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 .form-field input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #004690;
 }
 
 /* Add more styles as needed for other elements */

@@ -1,35 +1,21 @@
 import React from 'react';
+import CopyableTextLine from './CopyableTextLine/CopyableTextLine';
 import './EventDetails.css'; // Make sure to create this CSS file to style your component
+import { faEdit } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { details } from './Event'
 
 function EventDetails() {
-  // Placeholder state data
-  const details = {
-    eventName: "Tania's Birthday Party!",
-    eventDescription: 'A birthday bash for our dear friend Tania!',
-    eventLink: 'https://some/random/url',
-    date: 'December 13 2023',
-    time: '6:00 PM',
-    location: 'UNA Pizza',
-    participationThreshold: '5 People',
-    rsvpDeadline: 'December 12, 2023',
-    rsvpYes: ['Makeda', 'Junior'],
-    rsvpNo: ['Alex']
-  };
-
-  const handleCopyLink = () => {
-    navigator.clipboard.writeText(details.eventLink)
-      .then(() => alert('Link copied to clipboard!'))
-      .catch(err => console.error('Error copying link: ', err));
-  };
 
   return (
     <div className="event-details-container">
       <h1>{details.eventName}</h1>
       <p>{details.eventDescription}</p>
-      <div>
-        <button onClick={handleCopyLink}>Copy Event Invite Link</button>
-      </div>
+
+      <CopyableTextLine text={details.url}/>
+
       {/* Display the rest of your event details here */}
+      <h2>Event Details</h2>
       <div className="event-info">
         <strong>Date:</strong> {details.date}<br/>
         <strong>Time:</strong> {details.time}<br/>
@@ -37,15 +23,23 @@ function EventDetails() {
         <strong>Participation Threshold:</strong> {details.participationThreshold}<br/>
         <strong>RSVP Deadline:</strong> {details.rsvpDeadline}
       </div>
+
+      <a href='#' className='edit-link'>Edit <FontAwesomeIcon icon={faEdit}/></a>
+
+      <br/>
+
+      <hr className='horizontal-line'/>
+
+      <h2>RSVP Breakdown</h2>
       <div className="rsvp-breakdown">
         <div className="rsvp-list rsvp-yes">
-            <h3>Yes, I can attend.</h3>
+            <h3>Coming</h3>
             <ul>
-              {details.rsvpYes.map((name, index) => <li key={index}>{name}</li>)}
+              {details.rsvpYes.map((name, index) => <li key={index} className='attendee'>{name}</li>)}
             </ul>
         </div>
         <div className="rsvp-list rsvp-no">
-          <h3>No, I cannot attend.</h3>
+          <h3>Not Coming</h3>
           <ul>
             {details.rsvpNo.map((name, index) => <li key={index}>{name}</li>)}
           </ul>

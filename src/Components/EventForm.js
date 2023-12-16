@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import './EventForm.css'; 
-
+import './EventForm.css';
 
 function Form() {
     const [formData, setFormData] = useState({
@@ -11,6 +10,8 @@ function Form() {
         time: '',
         participationThreshold: '',
         rsvpDeadline: '',
+        url: '',
+        hostPswd: ''
     });
 
     const handleInputChange = (e) => {
@@ -27,7 +28,7 @@ function Form() {
         <div className="form-container">
             <h1 className="form-title">Create Event</h1>
             <p className="form-subtitle">
-                Design your perfect gathering by effortlessly setting up crucial details like date, time, and venue.
+                Organise the perfect get-together with the crew and see who's coming.
             </p>
             <form onSubmit={handleSubmit} className="event-form">
                 <div className="form-field">

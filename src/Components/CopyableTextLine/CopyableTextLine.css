@@ -4,27 +4,29 @@
     align-items: center;
     margin-bottom: 15px;
     padding: 0;
-    font-size: 1.6rem;
-
-    font-family: 'Arial', sans-serif;
+    border-radius: 5px;
+    background-color: #F4F4F4 !important;
+    vertical-align: middle !important;
 }
 
 .text {
     font-weight: bold;
-    padding: 25px;
+    padding: 10px;
     flex-grow: 1;
     background-color: #F4F4F4;
-        border-radius: 15px 0 0 15px;
-        color: #626262;
+    border-radius: 5px 0 0 5px;
+    color: #626262;
+    border-right: white solid 2px;
 }
 
 .copy-btn {
-    float:right;
-    border-left: white solid 5px;
-    font-size: 1.6rem;
-    background-color: #F4F4F4;
-    color: #626262;
-    flex: 1;
-    max-width: 75px;
-    border-radius: 0 15px 15px 0;
+    float:right !important;
+    background-color: #F4F4F4 !important;
+    color: #626262 !important;
+    flex: 1 !important;
+    max-width: 75px !important;
+    border-radius: 0 5px 5px 0 !important;
+    padding: 10px;
+    vertical-align: middle !important;
+    margin: auto;
 }

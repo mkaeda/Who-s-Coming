@@ -1,13 +1,19 @@
 import React from 'react';
-import EventForm from './components/EventForm.js';
-import EventDetails from './components/EventDetails.js';
+import EventForm from './Components/EventForm.js';
+import EventDetails from './Components/EventDetails.js';
+import RSVPForm from './Components/RSVPForm.jsx';
+import HostLoginForm from './Components/HostLoginForm.jsx';
+import EventCreated from './Components/EventCreated.jsx';
 import './App.css'; // Assuming you have an App.css for your styles
 
 function App() {
     return (
         <div className="App">
-            <EventForm/>
+            {/* <EventForm/> */}
             {/* <EventDetails/> */}
+            {/* <RSVPForm/> */}
+            {/* <HostLoginForm/> */}
+            <EventCreated/>
         </div>
     );
 }
