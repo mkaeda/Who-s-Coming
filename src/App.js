@@ -9,11 +9,11 @@ import './App.css'; // Assuming you have an App.css for your styles
 function App() {
     return (
         <div className="App">
-            {/* <EventForm/> */}
-            {/* <EventDetails/> */}
-            {/* <RSVPForm/> */}
-            {/* <HostLoginForm/> */}
-            <EventCreated/>
+            {/* {<EventForm/>} */}
+            {<EventDetails/>}
+            {<RSVPForm/>}
+            {/* {<HostLoginForm/>} */}
+            {/* <EventCreated/> */}
         </div>
     );
 }

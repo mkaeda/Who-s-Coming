@@ -1,36 +1,79 @@
-import React, { useState } from 'react';
-import './EventForm.css'
-import './RSVPForm.css'
-import { details } from './Event'
+import React, { useRef, useEffect } from 'react';
+import './EventForm.css';
+import './RSVPForm.css';
+import { details } from './Event';
+import { calendarUtils } from './Calendar'; // Import the calendar utilities
 
+// Simulating an update to the global state or a database
+export let globalEventDetails = { ...details };
+
+const buttonStyle = {
+  display: 'inline-block', // Needed to apply margin and padding
+  backgroundColor: '#007bff', // Example button color, adjust as needed
+  color: 'white',
+  padding: '5px 10px',
+  margin: '5px',
+  textDecoration: 'none', // Remove underline from link
+  borderRadius: '5px', // Rounded corners
+  textAlign: 'center',
+  cursor: 'pointer',
+  border: 'none'
+};
 const RSVPForm = () => {
-  // State to manage RSVP form inputs
-  const [rsvpData, setRSVPData] = useState({
-    attendeeName: '',
-    attendanceStatus: 'yes',
-    notes: '',
-  });
+  // Create refs for form fields
+  const attendeeNameRef = useRef(null);
+  const attendanceStatusRef = useRef('yes');
 
-  // Handle input changes in the RSVP form
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setRSVPData({
-      ...rsvpData,
-      [name]: value,
-    });
+  const updateRSVPDisplay = () => {
+    document.getElementById('rsvp-yes-list').innerHTML = globalEventDetails.rsvpYes.map(name => `<li class='attendee'>${name}</li>`).join('');
+    document.getElementById('rsvp-no-list').innerHTML = globalEventDetails.rsvpNo.map(name => `<li>${name}</li>`).join('');
   };
+
+  // When the component mounts, update the RSVP display
+  useEffect(() => {
+    updateRSVPDisplay();
+  }, []);
 
   // Handle RSVP form submission
   const handleRSVSubmit = (e) => {
     e.preventDefault();
-    // Perform actions with RSVP form data (e.g., send to server, update state, etc.)
-    // We probably want to update whatever object we are using as a fake database.
-    // to idicate that this person rsvped and their response, here.
-  };
+    // Access the form field values using the refs
+    const attendeeName = attendeeNameRef.current.value;
+    const attendanceStatus = attendanceStatusRef.current.value;
+  
+    // Update the global state or send the data to the server
+    if (attendanceStatus === 'yes') {
+      globalEventDetails.rsvpYes.push(attendeeName);
+    } else {
+      globalEventDetails.rsvpNo.push(attendeeName);
+    }
+  
+    // Save RSVP response to localStorage
+    localStorage.setItem('rsvpYes', JSON.stringify(globalEventDetails.rsvpYes));
+    localStorage.setItem('rsvpNo', JSON.stringify(globalEventDetails.rsvpNo));
+    
+    window.dispatchEvent(new Event('rsvpUpdate'));
 
+    // Trigger a re-render of RSVP lists
+    document.getElementById('rsvp-yes-list').innerHTML = globalEventDetails.rsvpYes.map(name => `<li class='attendee'>${name}</li>`).join('');
+    document.getElementById('rsvp-no-list').innerHTML = globalEventDetails.rsvpNo.map(name => `<li>${name}</li>`).join('');
+  
+    // Log the updated details to see the changes
+    console.log(globalEventDetails);
+  
+    // Generate and display calendar links
+    const iCalendarData = calendarUtils.createICalendarData(details);
+    const googleCalendarUrl = calendarUtils.createGoogleCalendarUrl(details);
+  
+    // Use traditional DOM methods to show calendar buttons
+    document.getElementById('calendar-buttons').style.display = 'block';
+    document.getElementById('icalendar-link').href = `data:text/calendar;charset=utf8,${encodeURIComponent(iCalendarData)}`;
+    document.getElementById('googlecalendar-link').href = googleCalendarUrl;
+  };
+  
   return (
     <form onSubmit={handleRSVSubmit}>
-      <h1 className="form-title">RSVP for {details.eventName}</h1>
+    <h1 className="form-title">RSVP for {details.eventName}</h1>
       <p className="form-subtitle">{details.eventDescription}</p>
 
       <h2>Event Details</h2>
@@ -39,10 +82,22 @@ const RSVPForm = () => {
         <strong>Time:</strong> {details.time}<br/>
         <strong>Location:</strong> {details.location}<br/>
         <strong>Participation Threshold:</strong> {details.participationThreshold}<br/>
-        <strong>RSVP Deadline:</strong> {details.rsvpDeadline}
+        <h3>RSVP Breakdown</h3>
+        <div className="rsvp-breakdown">
+        <div className="rsvp-list rsvp-yes">
+          <h3>Coming</h3>
+          <ul id="rsvp-yes-list">
+            {/* This will be populated on form submit */}
+          </ul>
+        </div>
+        <div className="rsvp-list rsvp-no">
+          <h3>Not Coming</h3>
+          <ul id="rsvp-no-list">
+            {/* This will be populated on form submit */}
+          </ul>
+        </div>
       </div>
-
-      <h2>RSVP</h2>
+      </div>
 
       {/* Attendee Name */}
       <div className="form-field">
@@ -50,22 +105,17 @@ const RSVPForm = () => {
         <input
           type="text"
           name="attendeeName"
-          value={rsvpData.attendeeName}
-          onChange={handleInputChange}
+          ref={attendeeNameRef}
           required
         />
       </div>
 
-
       {/* Attendance Status */}
       <div className='form-field'>
-        <label htmlFor='attendanceStatus'>
-          Attendance Status
-        </label>
+        <label htmlFor='attendanceStatus'>Attendance Status</label>
         <select
           name="attendanceStatus"
-          value={rsvpData.attendanceStatus}
-          onChange={handleInputChange}
+          ref={attendanceStatusRef}
         >
           <option value="yes">Yes, I will attend</option>
           <option value="no">No, I cannot attend</option>
@@ -74,6 +124,12 @@ const RSVPForm = () => {
 
       {/* Submit Button */}
       <button type="submit">Submit RSVP</button>
+
+      {/* Calendar Buttons Container */}
+      <div id="calendar-buttons" style={{ display: 'none', marginTop: '10px' }}>
+      <a id="icalendar-link" href="#" download="event.ics" style={buttonStyle}>Add to iCalendar</a>
+      <a id="googlecalendar-link" href="#" target="_blank" rel="noopener noreferrer" style={buttonStyle}>Add to Google Calendar</a>
+    </div>
     </form>
   );
 };
