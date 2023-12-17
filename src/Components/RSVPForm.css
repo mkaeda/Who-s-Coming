@@ -1,6 +1,9 @@
 .form-title{
-    margin-bottom: 5px;
-    margin-top: 1px;
+    color: #4A90E2;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 8px;
+    margin-top: 0;
 }
 
 .form-subtitle{
@@ -9,7 +12,7 @@
 }
 
 .submit-button{
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 #calendar-buttons {

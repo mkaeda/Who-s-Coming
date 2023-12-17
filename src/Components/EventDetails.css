@@ -16,12 +16,47 @@
     font-size: 24px;
     text-align: center;
     margin-bottom: 8px;
+    margin-top: 0;
   }
 
   .event-details-container p {
     font-size: 16px;
     text-align: center;
     margin-bottom: 20px;
+  }
+
+  .subtitle{
+    color: #666;
+  }
+
+  .link-container{
+    flex: auto;
+    background-color: black;
+  }
+
+  .password-desc {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+  
+  .send-desc{
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 2px;
+    font-weight: 600;
+  }
+
+  
+  .copyable-container span{
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .copyable-container cpy-btn{
+    background-color: #4A90E2;
   }
 
   .event-details-container .event-info {

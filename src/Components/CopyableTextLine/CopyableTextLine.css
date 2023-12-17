@@ -21,8 +21,8 @@
 
 .copy-btn {
     float:right !important;
-    background-color: #F4F4F4 !important;
-    color: #626262 !important;
+    background-color: #007bff !important;
+    color: #ffffff !important;
     flex: 1 !important;
     max-width: 75px !important;
     border-radius: 0 5px 5px 0 !important;

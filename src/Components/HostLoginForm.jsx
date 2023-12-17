@@ -1,5 +1,7 @@
+// HOME SCREEN
 import React, { useState } from 'react';
-import './EventForm.css';
+// import './EventForm.css';
+import './HostLoginForm.css';
 import { details } from './Event'
 
 const HostLoginForm = ({ correctPassword }) => {
@@ -20,27 +22,38 @@ const HostLoginForm = ({ correctPassword }) => {
   }
 };
 
+const handleCreateEvent = () => {
+  // Logic for handling the "Create New Event" button click
+};
 
   return (
-    <form onSubmit={handleLogin}>
-      <h1 className='form-title'>{details.eventName} - Host View</h1>
-      <p className='form-subtitle'>{details.eventDescription}</p>
-      {/* Password Input */}
-      <div className='form-field'>
-        <label htmlFor='password'>Enter your host password:</label>
-        <input
-          name='password'
-          type="password"
-          value={password}
-          onChange={handlePasswordChange}
-          required
-        />
+    <>
+      <div>
+        <p className='home-subtitle'>Welcome to</p>
+        <h1 className='home-title'> Who's Coming</h1>
+        <button className='home-create' onClick={handleCreateEvent}>Create New Event</button>
       </div>
 
-      {/* Submit Button */}
-      <button type="submit">View Event as Host</button>
-    </form>
+      <form onSubmit={handleLogin}>
+        <p className='already-have'>Already have an event?</p>
+
+        {/* Password Input */}
+        <div className='form-field'>
+          <input
+            name='password'
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
+            placeholder="Enter your host password"
+          />
+        </div>
+
+        {/* Submit Button */}
+        <button className='home-edit' type="submit">View Event as Host</button>
+      </form>
+    </>
   );
 };
+
 
 export default HostLoginForm;

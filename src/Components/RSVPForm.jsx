@@ -73,64 +73,65 @@ const RSVPForm = () => {
   
   return (
     <form onSubmit={handleRSVSubmit}>
-    <h1 className="form-title">RSVP for {details.eventName}</h1>
-      <p className="form-subtitle">{details.eventDescription}</p>
+    <p className="form-subtitle">You're Invited!</p>
+    <h1 className="form-title">{details.eventName}</h1>
+    <p className="form-subtitle">{details.eventDescription}</p>
 
-      {/* <h2>Event Details</h2> */}
-      <div className="event-info">
-        <strong>Date:</strong> {details.date}<br/>
-        <strong>Time:</strong> {details.time}<br/>
-        <strong>Location:</strong> {details.location}<br/>
-        <strong>Participation Threshold:</strong> {details.participationThreshold}<br/>
-        <h3>RSVP Breakdown</h3>
-        <div className="rsvp-breakdown">
-        <div className="rsvp-list rsvp-yes">
-          <h3>Coming</h3>
-          <ul id="rsvp-yes-list">
-            {/* This will be populated on form submit */}
-          </ul>
-        </div>
-        <div className="rsvp-list rsvp-no">
-          <h3>Not Coming</h3>
-          <ul id="rsvp-no-list">
-            {/* This will be populated on form submit */}
-          </ul>
-        </div>
+    {/* <h2>Event Details</h2> */}
+    <div className="event-info">
+      <strong>Date:</strong> {details.date}<br/>
+      <strong>Time:</strong> {details.time}<br/>
+      <strong>Location:</strong> {details.location}<br/>
+      <strong>Participation Threshold:</strong> {details.participationThreshold}<br/>
+      <h3>RSVP Breakdown</h3>
+      <div className="rsvp-breakdown">
+      <div className="rsvp-list rsvp-yes">
+        <h3>Coming</h3>
+        <ul id="rsvp-yes-list">
+          {/* This will be populated on form submit */}
+        </ul>
       </div>
+      <div className="rsvp-list rsvp-no">
+        <h3>Not Coming</h3>
+        <ul id="rsvp-no-list">
+          {/* This will be populated on form submit */}
+        </ul>
       </div>
-
-      {/* Attendee Name */}
-      <div className="form-field">
-        <label htmlFor='attendeeName'>Attendee Name</label>
-        <input
-          type="text"
-          name="attendeeName"
-          ref={attendeeNameRef}
-          required
-        />
-      </div>
-
-      {/* Attendance Status */}
-      <div className='form-field'>
-        <label htmlFor='attendanceStatus'>Attendance Status</label>
-        <select
-          name="attendanceStatus"
-          ref={attendanceStatusRef}
-        >
-          <option value="yes">Yes, I will attend</option>
-          <option value="no">No, I cannot attend</option>
-        </select>
-      </div>
-
-      {/* Submit Button */}
-      <button className='submit-button' type="submit">Submit RSVP</button>
-
-      {/* Calendar Buttons Container */}
-      <div id="calendar-buttons" style={{ display: 'none', marginTop: 'px' }}>
-      <a id="icalendar-link" href="#" download="event.ics" style={buttonStyle}>Add to iCalendar</a>
-      <a id="googlecalendar-link" href="#" target="_blank" rel="noopener noreferrer" style={buttonStyle}>Add to Google Calendar</a>
     </div>
-    </form>
+    </div>
+
+    {/* Attendee Name */}
+    <div className="form-field">
+      <label htmlFor='attendeeName'>Attendee Name</label>
+      <input
+        type="text"
+        name="attendeeName"
+        ref={attendeeNameRef}
+        required
+      />
+    </div>
+
+    {/* Attendance Status */}
+    <div className='form-field'>
+      <label htmlFor='attendanceStatus'>Attendance Status</label>
+      <select
+        name="attendanceStatus"
+        ref={attendanceStatusRef}
+      >
+        <option value="yes">Yes, I will attend</option>
+        <option value="no">No, I cannot attend</option>
+      </select>
+    </div>
+
+    {/* Submit Button */}
+    <button className='submit-button' type="submit">Submit RSVP</button>
+
+    {/* Calendar Buttons Container */}
+    <div id="calendar-buttons" style={{ display: 'none', marginTop: 'px' }}>
+    <a id="icalendar-link" href="#" download="event.ics" style={buttonStyle}>Add to iCalendar</a>
+    <a id="googlecalendar-link" href="#" target="_blank" rel="noopener noreferrer" style={buttonStyle}>Add to Google Calendar</a>
+  </div>
+  </form>
   );
 };
 
